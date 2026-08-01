@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>NeoStreamer NFL — returning to app</title>
+</head>
+<body style="font-family: -apple-system, sans-serif; text-align: center; padding-top: 3em;">
+  <p id="msg">Returning to NeoStreamer NFL&hellip;</p>
+  <p><a id="manual-link" href="#" style="display: none;">Tap here if it didn't open automatically</a></p>
+  <script>
+    var target = 'neostreamernfl://redirect' + window.location.search;
+    document.getElementById('manual-link').href = target;
+    window.location.href = target;
+    setTimeout(function () {
+      document.getElementById('msg').textContent = 'Still here? Use the link below.';
+      document.getElementById('manual-link').style.display = 'inline';
+    }, 1500);
+  </script>
+</body>
+</html>
